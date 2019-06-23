@@ -39,5 +39,31 @@ public class StreamDishTest {
         s.forEach(System.out::println);
     }
 
+    @Test
+    public void test03() {
+
+        List<String> names = menu.stream()
+                .filter(d -> {
+                    System.out.println("filter:" + d.getName());
+                    return d.getCalories() > 300;
+                })
+                .map(d -> {
+                    System.out.println("map:" + d.getName());
+                    return d.getName();
+                })
+                .limit(3)
+                .collect(Collectors.toList());
+    }
+
+    @Test
+    public void test04(){
+        long count = menu.stream()
+                .filter(d -> d.getCalories() > 300)
+                .distinct()
+                .limit(3)
+                .count();
+        System.out.println(count);
+    }
+
 
 }
