@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class MenuTest {
-    List<Dish> menu = Arrays.asList(
+    public List<Dish> menu = Arrays.asList(
             new Dish("pork", false, 800, Dish.Type.MEAT),
             new Dish("chicken", false, 400, Dish.Type.MEAT),
             new Dish("beef", false, 700, Dish.Type.MEAT),
